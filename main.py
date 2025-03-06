@@ -1,18 +1,23 @@
-from product_manager import ProductManager
 from product import Product
+from product_manager import ProductManager
+from cart import Cart
 
-# Kreiranje instanci ProductManager i nekoliko proizvoda
-manager = ProductManager()
-product1 = Product("Laptop", 80000, 5)
-product2 = Product("Telefon", 50000, 10)
-product3 = Product("Miš", 2000, 15)
+# Kreiranje ProductManager i dodavanje proizvoda
+product_manager = ProductManager()
+product1 = Product("Telefon", 50000, 5)
+product2 = Product("Laptop", 120000, 3)
+product3 = Product("Slusalice", 5000, 10)
 
-# Dodavanje proizvoda u inventar
-manager.add_product(product1)
-manager.add_product(product2)
-manager.add_product(product3)
+product_manager.add_product(product1)
+product_manager.add_product(product2)
+product_manager.add_product(product3)
 
-# Prikaz proizvoda i ukupne vrednosti
-print("Inventar proizvoda:")
-manager.display_products()
-print(f"Ukupna vrednost inventara: {manager.total_inventory_value()} RSD")
+# Kreiranje korpe i dodavanje proizvoda
+cart = Cart()
+cart.add_to_cart(product1, 1)
+cart.add_to_cart(product2, 2)
+cart.add_to_cart(product3, 1)
+
+# Prikaz sadržaja korpe
+cart.display_cart()
+
