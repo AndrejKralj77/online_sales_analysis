@@ -1,18 +1,17 @@
-from product import Product
-
 class ProductManager:
     def __init__(self):
         self.products = []
 
     def add_product(self, product):
-        """Dodaje novi proizvod u listu proizvoda."""
         self.products.append(product)
 
+    def remove_product(self, product_name):
+        self.products = [p for p in self.products if p.name != product_name]
+
     def display_products(self):
-        """Prikazuje sve proizvode u inventaru."""
         for product in self.products:
-            print(product.display_info())
+            print(f"{product.name} - {product.price} RSD - {product.quantity} kom")
 
     def total_inventory_value(self):
-        """Izračunava ukupnu vrednost svih proizvoda."""
-        return sum(product.price * product.quantity for product in self.products)
+        return sum(p.price * p.quantity for p in self.products)
+
