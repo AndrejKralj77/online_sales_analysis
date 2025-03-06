@@ -3,9 +3,10 @@ from product import Product
 
 # Kreiranje instanci ProductManager i nekoliko proizvoda
 manager = ProductManager()
-product1 = Product("Laptop", 80000, 5)
-product2 = Product("Telefon", 50000, 10)
-product3 = Product("Miš", 2000, 15)
+product1 = Product("Pametni telefon", 55000, 4)
+product2 = Product("Gaming laptop", 130000, 2)
+product3 = Product("Bežične slušalice", 6000, 8)
+
 
 # Dodavanje proizvoda u inventar
 manager.add_product(product1)
